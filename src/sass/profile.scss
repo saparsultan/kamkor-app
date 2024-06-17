@@ -1,0 +1,107 @@
+.profile {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  &-title {
+    margin-bottom: 20px;
+  }
+  &-list {
+    grid-template-columns: 1fr;
+    grid-gap: 8px;
+  }
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    &:not(:first-child) {
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    &__text {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+}
+
+.tours {
+  &-table {
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 12px;
+    &-wrap {
+      width: 100%;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, .08);
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, .1);
+        border-radius: 50px;
+      }
+    }
+    thead {
+      color: #fff;
+      background-color: var(--primary-color);
+      tr {
+        th {
+          font-size: 14px;
+          font-weight: 500;
+          text-align: left;
+          white-space: nowrap;
+          padding: 8px;
+          //border-left: 1px solid rgba(0, 0, 0, 0.1);
+
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          font-size: 14px;
+          text-align: left;
+          white-space: nowrap;
+          padding: 8px;
+          border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}
+
+.main {
+  &-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 8px;
+  }
+  &-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 8px;
+  }
+  &-item {
+    padding-bottom: 8px;
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+    &__label {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 5px;
+      opacity: .7;
+    }
+  }
+  &-link {
+    gap: 4px;
+    font-size: 14px;
+    max-width: fit-content;
+  }
+}

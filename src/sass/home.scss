@@ -1,0 +1,33 @@
+.main {
+  &-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 12px;
+
+    &__item {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 16px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 12px;
+    }
+
+    &__label {
+      font-size: 18px;
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 16px 24px;
+      font-size: 14px;
+      font-weight: 500;
+      background-color: #D5251B;
+      color: #fff;
+      border-radius: 50px;
+    }
+  }
+}

@@ -1,14 +1,25 @@
 "use client"
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/assets/logos/fondkamkor.png";
-import '@/sass/header.scss'
 import {useLocale} from "@/context/locale";
-import translations from "@/translations";
 import LocaleSwitcher from "@/components/locale-switcher/LocaleSwitcher";
+import logo from "@/assets/logos/fondkamkor.png";
+import AuthBtn from "@/components/ui/AuthBtn";
+import {useEffect, useState} from "react";
+import {getItem} from "@/services/storage.service";
+import translations from "@/translations";
+import '@/sass/header.scss'
 
 export default function Header() {
   const { locale } = useLocale();
+  const [isAuth, setIsAuth] = useState(false)
+  useEffect(() => {
+    const oneI = getItem('oneI');
+    if (oneI) {
+      setIsAuth(true)
+    }
+  }, []);
+
   return (
       <header className="header__container">
         <div className="container">
@@ -21,10 +32,10 @@ export default function Header() {
                     alt="Министерство туризма и спорта РК"
                 />
               </Link>
-              <div>
-                {translations[locale].welcome}
+              <div className="header-top__right">
+                <LocaleSwitcher />
+                <AuthBtn isAuth={isAuth} title={translations[locale].signIn}/>
               </div>
-              <LocaleSwitcher />
             </div>
           </div>
         </div>

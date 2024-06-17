@@ -11,3 +11,14 @@ export const shortLanguages = {
   kk: 'KZ',
   ru: 'RU',
 }
+
+export const links = {
+  main: 'main',
+  travelAgencies: 'agencies',
+  search: 'search',
+  help: 'help',
+  login: 'login',
+  profile: 'profile',
+  mytTours: 'my-tours',
+  edit: 'edit',
+}
