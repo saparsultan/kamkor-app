@@ -25,6 +25,7 @@ const translations = {
     needLegalAdvice: 'Заңгерлік кеңес қажет пе?',
     youCanContactLawyers: 'Сіз біздің заңгерлерге хабарласа аласыз',
     iAgreePersonalData: 'Мен жеке деректерді беруге және өңдеуге келісемін',
+    loader: 'Жүктеу...',
     placeholder: {
       tourCode: 'Туркодты енгізіңіз',
       tourAgent: 'Туристік агенттіктің атын енгізіңіз',
@@ -36,7 +37,8 @@ const translations = {
       dataUpdated: 'Деректер жаңартылды',
       dataError: 'Жаңарту кезінде қате орын алды',
       incorrectPhoneAndPassport: 'Телефон нөмірі немесе төлқұжат қате',
-      provisionPersonalDataRequired: 'Жеке деректерді өңдеуді қамтамасыз ету үшін өріс келісімі қажет!'
+      provisionPersonalDataRequired: 'Жеке деректерді өңдеуді қамтамасыз ету үшін өріс келісімі қажет!',
+      errorOccurred: 'Қате орын алды: ішкі жүйе қатесі, кейінірек қайталап көріңіз'
     },
     title: {
       tourDetails: 'Тур мәліметтері',
@@ -79,14 +81,6 @@ const translations = {
       numberTourCode: 'Тур кодының нөмірі',
     },
   },
-
-
-
-
-
-
-
-
   ru: {
     personalData: 'Личная информация',
     titleTourAgent: 'Список турагенств системы гарантирования',
@@ -113,6 +107,7 @@ const translations = {
     needLegalAdvice: 'Нужна юридическая консультация?',
     youCanContactLawyers: 'Можете обратится к нашим юристам',
     iAgreePersonalData: 'Даю согласие на предоставление и обработку персональных данных',
+    loader: 'Загрузка...',
     placeholder: {
       tourCode: 'Введите туркод',
       tourAgent: 'Введите название турагенства',
@@ -124,7 +119,8 @@ const translations = {
       dataUpdated: 'Данные были обновлены',
       dataError: 'Произошла ошибка при обновлении',
       incorrectPhoneAndPassport: 'Не правильный номер телефона и паспорта',
-      provisionPersonalDataRequired: 'Поле согласие на предоставление обработку персональных данных обязателен!'
+      provisionPersonalDataRequired: 'Поле согласие на предоставление обработку персональных данных обязателен!',
+      errorOccurred: 'Произошла ошибка внутренняя ошибка системы, попробуйте позже'
     },
     title: {
       tourDetails: 'Данные о туре',

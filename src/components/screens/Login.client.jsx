@@ -1,5 +1,5 @@
 "use client"
-import React, {useEffect} from "react";
+import {useState} from "react";
 import {v4 as uuidv4} from 'uuid'
 import {getItem, setItem} from "@/services/storage.service";
 import {useLocale} from "@/context/locale";
@@ -11,19 +11,17 @@ import {Bounce, toast} from 'react-toastify';
 export default function LoginClient() {
   const router = useRouter()
   const {locale} = useLocale();
-  const [phone, setPhone] = React.useState('')
-  const [passport, setPassport] = React.useState('')
-  const [confirm, setConfirm] = React.useState(false)
-  const [errorP, setPError] = React.useState(false)
-  const [errorPh, setPhError] = React.useState(false)
-
-  useEffect(() => {
-    const oneI = getItem('oneI');
-    console.log("oneI", oneI)
-  }, []);
+  const [phone, setPhone] = useState('')
+  const [passport, setPassport] = useState('')
+  const [confirm, setConfirm] = useState(false)
+  const [errorP, setPError] = useState(false)
+  const [errorPh, setPhError] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const sign = async (e) => {
     e.preventDefault()
+    const oneI = getItem('oneI');
+    setIsLoading(true)
     if (!confirm) {
       toast.warn(`${translations[locale].toasts.provisionPersonalDataRequired}`, {
         position: "top-center",
@@ -39,37 +37,49 @@ export default function LoginClient() {
     }
     if (phone && passport && confirm) {
       const pushId = await generateId()
-      await console.log('pushId', pushId)
-      await fetch(`/api/sign?passport=${passport}&pushId=${pushId}&phone=${phone}`)
+      await fetch(`/api/sign?passport=${passport}&pushId=${oneI ? oneI : pushId}&phone=${phone}`)
           .then(async (res) => {
             const result = await res.json();
-            console.log("success", result)
-            if (result && result?.return?.code) {
-              if (result?.return?.code === 200) {
+            if (result && result?.return?.code && result?.return?.code === 200) {
+              if (!oneI) {
                 setItem('oneI', pushId);
-                setItem('oneP', passport);
-                setItem('onePh', phone);
-                router.push(`${links.profile}`)
-                location.reload();
-              } else {
-                setPError(true)
-                setPhError(true)
-                toast.error(`${translations[locale].toasts.incorrectPhoneAndPassport}`, {
-                  position: "top-center",
-                  autoClose: 2000,
-                  hideProgressBar: false,
-                  closeOnClick: true,
-                  pauseOnHover: true,
-                  draggable: true,
-                  progress: undefined,
-                  theme: "light",
-                  transition: Bounce,
-                });
               }
+              setItem('oneP', passport);
+              setItem('onePh', phone);
+              setIsLoading(false)
+              router.push(`${links.profile}`)
+              location.reload();
+            } else {
+              setPError(true)
+              setPhError(true)
+              setIsLoading(false)
+              toast.error(`${translations[locale].toasts.incorrectPhoneAndPassport}`, {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+              });
             }
 
           })
           .catch((e) => {
+            toast.error(`${translations[locale].toasts.errorOccurred}`, {
+              position: "top-center",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+              transition: Bounce,
+            });
+            setIsLoading(false)
             console.log({e});
           });
     }
@@ -118,7 +128,8 @@ export default function LoginClient() {
             <span className="custom-checkmark" role="checkbox" aria-hidden="true"></span>
             {translations[locale].iAgreePersonalData}
           </label>
-          <button className='btn login-btn' type='submit' disabled={!confirm}>{translations[locale].signIn}</button>
+          <button className='btn login-btn' type='submit'
+                  disabled={!confirm || isLoading}>{!isLoading ? <span>{translations[locale].signIn}</span> : <span>{translations[locale].loader}</span>}</button>
         </form>
       </div>
   )

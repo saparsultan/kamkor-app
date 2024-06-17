@@ -1,5 +1,4 @@
 import { Inter } from "next/font/google";
-import { Toaster } from "react-hot-toast";
 import Header from "@/components/header/Header";
 import {LocaleProvider} from "@/context/locale";
 import ModalsAll from "@/components/modals";
@@ -63,7 +62,6 @@ export default function RootLayout({ children }) {
           <main>
             {children}
           </main>
-          <Toaster position="top-center" />
           <ModalsAll />
         </ToastProvider>
       </LocaleProvider>

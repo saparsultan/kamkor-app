@@ -35,7 +35,6 @@ export default function AuthBtn({isAuth, title}) {
   }
 
   const logout = () => {
-    localStorage.removeItem('oneI');
     localStorage.removeItem('oneP');
     localStorage.removeItem('onePh');
     location.reload();
