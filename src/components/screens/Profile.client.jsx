@@ -15,7 +15,7 @@ export default function ProfileClient() {
     const oneP = getItem('oneP');
     const onePh = getItem('onePh');
 
-    if (!oneI && !oneP && !onePh) {
+    if (!oneI || !oneP || !onePh) {
       return router.push(`${links.login}`)
     }
   }, [])

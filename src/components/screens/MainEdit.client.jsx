@@ -15,6 +15,16 @@ export default function MainEditClient() {
   const [passportEdit, setPassportEdit] = useState('')
 
   useEffect(() => {
+    const oneI = getItem('oneI');
+    const oneP = getItem('oneP');
+    const onePh = getItem('onePh');
+
+    if(!oneI || !oneP || !onePh) {
+      return router.push(`/${links.login}`)
+    }
+  }, [])
+
+  useEffect(() => {
     const onePh = getItem('onePh');
     if (onePh) {
       setPhoneEdit(onePh)

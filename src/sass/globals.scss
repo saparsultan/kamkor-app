@@ -98,6 +98,11 @@ a {
   text-decoration: none;
 }
 
+button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
 .btn {
   display: flex;
   align-items: center;

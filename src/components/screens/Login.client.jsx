@@ -1,5 +1,5 @@
 "use client"
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {v4 as uuidv4} from 'uuid'
 import {getItem, setItem} from "@/services/storage.service";
 import {useLocale} from "@/context/locale";
@@ -17,6 +17,16 @@ export default function LoginClient() {
   const [errorP, setPError] = useState(false)
   const [errorPh, setPhError] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    const oneI = getItem('oneI');
+    const oneP = getItem('oneP');
+    const onePh = getItem('onePh');
+
+    if(oneI && oneP && onePh) {
+      return router.push(`/`)
+    }
+  }, [])
 
   const sign = async (e) => {
     e.preventDefault()
@@ -47,8 +57,7 @@ export default function LoginClient() {
               setItem('oneP', passport);
               setItem('onePh', phone);
               setIsLoading(false)
-              router.push(`${links.profile}`)
-              location.reload();
+              router.push(`/${links.profile}`)
             } else {
               setPError(true)
               setPhError(true)

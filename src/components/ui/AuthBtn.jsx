@@ -31,7 +31,11 @@ export default function AuthBtn({isAuth, title}) {
   };
 
   const tooglePopup = () => {
-    isAuth && setIsToggle(!isToggle)
+    if(isAuth) {
+      setIsToggle(!isToggle)
+    } else {
+      router.push(`/${links.login}`)
+    }
   }
 
   const logout = () => {
@@ -53,7 +57,9 @@ export default function AuthBtn({isAuth, title}) {
               <path
                   d="M17.0809 14.1489C14.2909 12.2889 9.74094 12.2889 6.93094 14.1489C5.66094 14.9989 4.96094 16.1489 4.96094 17.3789C4.96094 18.6089 5.66094 19.7489 6.92094 20.5889C8.32094 21.5289 10.1609 21.9989 12.0009 21.9989C13.8409 21.9989 15.6809 21.5289 17.0809 20.5889C18.3409 19.7389 19.0409 18.5989 19.0409 17.3589C19.0309 16.1289 18.3409 14.9889 17.0809 14.1489Z"
                   fill="#fff"/>
-            </svg> : title}</div>
+            </svg> :  title}</div>
+
+
         {
             isToggle && <div className="auth-btn__popup" ref={ref}>
               <div className="auth-popup">

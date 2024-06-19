@@ -1,26 +1,12 @@
 "use client"
-import {useEffect} from "react";
 import Link from "next/link";
-import {useRouter} from "next/navigation";
 import translations from "@/translations";
 import {useLocale} from "@/context/locale";
 import {links} from "@/helper/constants";
-import {getItem} from "@/services/storage.service";
 import '@/sass/home.scss'
 
 export default function Home() {
-  const router = useRouter()
   const { locale } = useLocale();
-
-  useEffect(() => {
-    const oneI = getItem('oneI');
-    const oneP = getItem('oneP');
-    const onePh = getItem('onePh');
-
-    if(!oneI && !oneP && !onePh) {
-      return router.push(`${links.login}`)
-    }
-  }, [])
 
   return (
       <div className="main-grid__container">

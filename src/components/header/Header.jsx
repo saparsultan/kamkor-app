@@ -15,7 +15,9 @@ export default function Header() {
   const [isAuth, setIsAuth] = useState(false)
   useEffect(() => {
     const oneI = getItem('oneI');
-    if (oneI) {
+    const oneP = getItem('oneP');
+    const onePh = getItem('onePh');
+    if (oneI && oneP && onePh) {
       setIsAuth(true)
     }
   }, []);
