@@ -36,7 +36,7 @@ const translations = {
     toasts: {
       dataUpdated: 'Деректер жаңартылды',
       dataError: 'Жаңарту кезінде қате орын алды',
-      incorrectPhoneAndPassport: 'Телефон нөмірі немесе төлқұжат қате',
+      incorrectPhoneAndPassport: 'Кіру ақпараты дұрыс еңгізілмеген.',
       provisionPersonalDataRequired: 'Жеке деректерді өңдеуді қамтамасыз ету үшін өріс келісімі қажет!',
       errorOccurred: 'Қате орын алды: ішкі жүйе қатесі, кейінірек қайталап көріңіз'
     },
@@ -118,7 +118,7 @@ const translations = {
     toasts: {
       dataUpdated: 'Данные были обновлены',
       dataError: 'Произошла ошибка при обновлении',
-      incorrectPhoneAndPassport: 'Кіру ақпараты дұрыс еңгізілмеген.',
+      incorrectPhoneAndPassport: 'Неправильные данные для входа.',
       provisionPersonalDataRequired: 'Поле согласие на предоставление обработку персональных данных обязателен!',
       errorOccurred: 'Произошла ошибка внутренняя ошибка системы, попробуйте позже'
     },
