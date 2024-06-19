@@ -118,7 +118,7 @@ const translations = {
     toasts: {
       dataUpdated: 'Данные были обновлены',
       dataError: 'Произошла ошибка при обновлении',
-      incorrectPhoneAndPassport: 'Не правильный номер телефона и паспорта',
+      incorrectPhoneAndPassport: 'Кіру ақпараты дұрыс еңгізілмеген.',
       provisionPersonalDataRequired: 'Поле согласие на предоставление обработку персональных данных обязателен!',
       errorOccurred: 'Произошла ошибка внутренняя ошибка системы, попробуйте позже'
     },
