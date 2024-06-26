@@ -26,6 +26,7 @@ const translations = {
     youCanContactLawyers: 'Сіз біздің заңгерлерге хабарласа аласыз',
     iAgreePersonalData: 'Мен жеке деректерді беруге және өңдеуге келісемін',
     loader: 'Жүктеу...',
+    ministryTourismAndSports: 'ҚР туризм және<br/> спорт министрлігі',
     placeholder: {
       tourCode: 'Туркодты енгізіңіз',
       tourAgent: 'Туристік агенттіктің атын енгізіңіз',
@@ -108,6 +109,7 @@ const translations = {
     youCanContactLawyers: 'Можете обратится к нашим юристам',
     iAgreePersonalData: 'Даю согласие на предоставление и обработку персональных данных',
     loader: 'Загрузка...',
+    ministryTourismAndSports: 'Министерство<br/> туризма и спорта РК',
     placeholder: {
       tourCode: 'Введите туркод',
       tourAgent: 'Введите название турагенства',

@@ -132,6 +132,12 @@ a {
     padding-top: 16px;
     padding-bottom: 12px;
 
+    &__left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
     &__right {
       display: flex;
       align-items: center;
@@ -147,9 +153,22 @@ a {
     display: flex;
     align-items: center;
 
+    &--text {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      img {
+        height: 38px!important;
+      }
+    }
+
     img {
       width: auto;
       height: 40px;
+    }
+
+    span {
+      font-size: 12px;
     }
 
     &--first {
