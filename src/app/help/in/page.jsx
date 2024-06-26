@@ -257,10 +257,10 @@ export default function HelpIn() {
           <h3 className="consultation-blank__title">
             {translations[locale].needLegalAdvice}
           </h3>
-          <div className="consultation-blank__desc">
-            {translations[locale].needLegalAdvice}
-            Можете обратится к нашим юристам
-          </div>
+          {/*<div className="consultation-blank__desc">*/}
+          {/*  {translations[locale].needLegalAdvice}*/}
+          {/*  &nbsp;Можете обратится к нашим юристам*/}
+          {/*</div>*/}
           <Link className="item-btn item-btn--primary" href="https://api.whatsapp.com/send?phone=77018880395"
                 target='_blank' style={{justifyContent: 'center'}}><span>{translations[locale].contactKamkor}</span>
           </Link>
