@@ -33,6 +33,8 @@ const translations = {
       numberPhone: 'Телефон нөміріңізді енгізіңіз',
       numberPassport: 'Паспорт нөміріңізді енгізіңіз',
       searchTourCodeNumber: 'Туркод нөмірі бойынша іздеу',
+      login: 'Логинді енгізіңіз',
+      password: 'Құпия сөзді енгізіңіз',
     },
     toasts: {
       dataUpdated: 'Деректер жаңартылды',
@@ -68,7 +70,9 @@ const translations = {
       travelAgencyDirector: 'Туристік агенттік директоры',
       travelAgencyInfo: 'Туристік агенттік туралы ақпарат',
       contactInfo: 'Байланыс ақпараты',
-      authorization: 'Авторизация'
+      authorization: 'Авторизация',
+      authTravelAgent: 'Туристтік агент ретінде кіру',
+      authTourist: 'Турист ретінде кіру'
 
     },
     labels: {
@@ -80,6 +84,25 @@ const translations = {
       tourOperator: 'Туроператор',
       IATAAirportCode: 'IATA әуежай коды',
       numberTourCode: 'Тур кодының нөмірі',
+
+      login: 'Логин',
+      userType: 'Қолданушы түрі',
+      legalTypeOrg: 'Ұйымның құқықтық түрі',
+      legalNameOrg: 'Ұйымның заңды атауы',
+      brandNameCompany: 'Туристік агенттік компанияның брендтік атауы',
+      webSite: 'Web-сайт',
+      fullNameDirector: 'Директордың аты-жөні',
+      emailTravelAgent: 'Туристік агенттің e-mail',
+      phoneDirector: 'Директордың телефон нөмірі',
+      phoneCompany: 'Ұйымның телефон нөмірі',
+      country: 'Ел',
+      addressLegal: 'Заңды мекенжайы',
+      addressPhysical: 'Физикалық мекенжай',
+      description: 'Сипаттама',
+      notes: 'Ескертпе',
+      descriptionTwo: 'Сипаттама 2',
+      travelAgent: 'Турагент',
+      tourist: 'Турист'
     },
   },
   ru: {
@@ -116,6 +139,8 @@ const translations = {
       numberPhone: 'Введите номер телефона',
       numberPassport: 'Введите номер паспорта',
       searchTourCodeNumber: 'Поиск по номеру туркода',
+      login: 'Введите логин',
+      password: 'Введите пароль',
     },
     toasts: {
       dataUpdated: 'Данные были обновлены',
@@ -151,7 +176,9 @@ const translations = {
       travelAgencyDirector: 'Директор турагенства',
       travelAgencyInfo: 'Данные о турагенстве',
       contactInfo: 'Контактная информация',
-      authorization: 'Авторизация'
+      authorization: 'Авторизация',
+      authTravelAgent: 'Авторизоваться как турагент',
+      authTourist: 'Авторизоваться как турист'
     },
     labels: {
       numberPhone: 'Номер телефона',
@@ -162,6 +189,24 @@ const translations = {
       tourOperator: 'Туроператор',
       IATAAirportCode: 'IATA-код аэропорта',
       numberTourCode: 'Номер туркода',
+      login: 'Логин',
+      userType: 'Тип пользователя',
+      legalTypeOrg: 'Юридический тип организации',
+      legalNameOrg: 'Юридическое название организации',
+      brandNameCompany: 'Брендовое название компании-турагента',
+      webSite: 'Web-сайт',
+      fullNameDirector: 'ФИО директора',
+      emailTravelAgent: 'E-mail турагента',
+      phoneDirector: 'Телефон директора',
+      phoneCompany: 'Телефон компании',
+      country: 'Страна',
+      addressLegal: 'Адрес юридический',
+      addressPhysical: 'Адрес физический',
+      description: 'Описание',
+      notes: 'Примечания',
+      descriptionTwo: 'Описание 2',
+      travelAgent: 'Туристтік агент',
+      tourist: 'Турист'
     },
   },
 };

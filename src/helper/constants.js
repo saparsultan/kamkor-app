@@ -21,4 +21,6 @@ export const links = {
   profile: 'profile',
   mytTours: 'my-tours',
   edit: 'edit',
+  tourist: 'tourist',
+  travelAgent: 'travel-agent',
 }

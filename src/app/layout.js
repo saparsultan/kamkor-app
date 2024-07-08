@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import Header from "@/components/header/Header";
+import Footer from "@/components/footer/Footer";
 import {LocaleProvider} from "@/context/locale";
 import ModalsAll from "@/components/modals";
 import ToastProvider from "@/context/toaster";
@@ -62,6 +63,7 @@ export default function RootLayout({ children }) {
           <main>
             {children}
           </main>
+          <Footer/>
           <ModalsAll />
         </ToastProvider>
       </LocaleProvider>

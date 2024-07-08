@@ -41,6 +41,7 @@ export default function AuthBtn({isAuth, title}) {
   const logout = () => {
     localStorage.removeItem('oneP');
     localStorage.removeItem('onePh');
+    localStorage.removeItem('user');
     location.reload();
     router.push(`${links.login}`)
   }

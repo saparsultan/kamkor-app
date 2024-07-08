@@ -15,13 +15,22 @@ export default function MainEditClient() {
   const [passportEdit, setPassportEdit] = useState('')
 
   useEffect(() => {
+    const user = getItem('user');
     const oneI = getItem('oneI');
     const oneP = getItem('oneP');
     const onePh = getItem('onePh');
 
-    if(!oneI || !oneP || !onePh) {
-      return router.push(`/${links.login}`)
+    if(user === "travel-agent") {
+      if (!oneP || !onePh) {
+        return router.push(`${links.login}`)
+      }
     }
+    else {
+      if (!oneI || !oneP || !onePh) {
+        return router.push(`${links.login}`)
+      }
+    }
+
   }, [])
 
   useEffect(() => {

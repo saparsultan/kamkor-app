@@ -9,30 +9,28 @@ import {useRouter} from "next/navigation";
 import {Bounce, toast} from 'react-toastify';
 import Back from "@/components/ui/Back";
 
-export default function LoginClient() {
+export default function LoginAgentClient() {
   const router = useRouter()
   const {locale} = useLocale();
-  const [phone, setPhone] = useState('')
-  const [passport, setPassport] = useState('')
+  const [login, setLogin] = useState('')
+  const [password, setPassword] = useState('')
   const [confirm, setConfirm] = useState(false)
   const [errorP, setPError] = useState(false)
   const [errorPh, setPhError] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-    const user = getItem('user');
-    const oneI = getItem('oneI');
     const oneP = getItem('oneP');
     const onePh = getItem('onePh');
+    const user = getItem('user');
 
-    if(user === "tourist" && oneI && oneP && onePh) {
+    if(user === "travel-agent" && oneP && onePh) {
       return router.push(`/`)
     }
   }, [])
 
   const sign = async (e) => {
     e.preventDefault()
-    const oneI = getItem('oneI');
     setIsLoading(true)
     if (!confirm) {
       toast.warn(`${translations[locale].toasts.provisionPersonalDataRequired}`, {
@@ -47,21 +45,17 @@ export default function LoginClient() {
         transition: Bounce,
       });
     }
-    if (phone && passport && confirm) {
-      const pushId = await generateId()
-      await fetch(`/api/sign?passport=${passport}&pushId=${oneI ? oneI : pushId}&phone=${phone}`)
+    if (login && password && confirm) {
+      await fetch(`/api/travel-agent?agentlogin=${login}&agentpass=${password}`)
           .then(async (res) => {
             const result = await res.json();
-            if (result && result?.return?.code && result?.return?.code === 200) {
-              if (!oneI) {
-                setItem('oneI', pushId);
-              }
-              setItem('oneP', passport);
-              setItem('onePh', phone);
-              setItem('user', "tourist");
+            if (result && result?.info) {
+              setItem('oneP', password);
+              setItem('onePh', login);
+              setItem('user', "travel-agent");
               setIsLoading(false)
-              router.push(`/${links.profile}`)
-            } else {
+              router.push(`/${links.profile}`)}
+            else {
               setPError(true)
               setPhError(true)
               setIsLoading(false)
@@ -101,18 +95,18 @@ export default function LoginClient() {
     return uuidv4().replace(/-/g, '').slice(0, 16);
   }
 
-  const changePhone = (e) => {
+  const changeLogin = (e) => {
     if (e.target.value === "") {
       setPError(false)
     }
-    setPhone(e.target.value)
+    setLogin(e.target.value)
   }
 
   const changePassport = (e) => {
     if (e.target.value === "") {
       setPhError(false)
     }
-    setPassport(e.target.value)
+    setPassword(e.target.value)
   }
 
   const changeConfirm = (e) => {
@@ -124,17 +118,17 @@ export default function LoginClient() {
         <div className='page-blank__back-btn'>
           <Back/>
         </div>
-        <h2 className='page-blank__title login-title'>{translations[locale].title.authTourist}</h2>
+        <h2 className='page-blank__title login-title'>{translations[locale].title.authTravelAgent}</h2>
         <form className='login-form' onSubmit={sign}>
           <div className="login-form-field" style={{alignItems: 'flex-start'}}>
-            <input type="text" placeholder={translations[locale].placeholder.numberPhone}
-                   className={errorP ? 'input input--error' : 'input'} value={phone} required
-                   onChange={changePhone}/>
+            <input type="text" placeholder={translations[locale].placeholder.login}
+                   className={errorP ? 'input input--error' : 'input'} value={login} required
+                   onChange={changeLogin}/>
             <span></span>
           </div>
           <div className="login-form-field" style={{alignItems: 'flex-start'}}>
-            <input type="text" placeholder={translations[locale].placeholder.numberPassport}
-                   className={errorPh ? 'input input--error' : 'input'} value={passport} required
+            <input type="password" placeholder={translations[locale].placeholder.password}
+                   className={errorPh ? 'input input--error' : 'input'} value={password} required
                    onChange={changePassport}/>
           </div>
           <label className="custom-checkbox login-form-field login-form-field--checkbox flex items-center"
@@ -144,7 +138,8 @@ export default function LoginClient() {
             <span className="custom-checkmark-text">{translations[locale].iAgreePersonalData}</span>
           </label>
           <button className='btn login-btn' type='submit'
-                  disabled={!confirm || isLoading}>{!isLoading ? <span>{translations[locale].signIn}</span> : <span>{translations[locale].loader}</span>}</button>
+                  disabled={!confirm || isLoading}>{!isLoading ? <span>{translations[locale].signIn}</span> :
+              <span>{translations[locale].loader}</span>}</button>
         </form>
       </div>
   )

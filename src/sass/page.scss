@@ -3,6 +3,14 @@
     &__container {
       margin: 20px 0;
     }
+    &__back {
+      &-btn {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 8px;
+      }
+    }
     &__head {
       display: flex;
       align-items: flex-start;

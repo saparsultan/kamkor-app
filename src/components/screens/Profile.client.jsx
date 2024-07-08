@@ -1,5 +1,5 @@
 "use client"
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useRouter} from "next/navigation";
 import Link from "next/link";
 import {links} from "@/helper/constants";
@@ -10,14 +10,25 @@ import translations from "@/translations";
 export default function ProfileClient() {
   const {locale} = useLocale()
   const router = useRouter()
+  const [userType, setUserType] = useState("tourist");
   useEffect(() => {
+    const user = getItem('user');
     const oneI = getItem('oneI');
     const oneP = getItem('oneP');
     const onePh = getItem('onePh');
+    setUserType(user)
 
-    if (!oneI || !oneP || !onePh) {
-      return router.push(`${links.login}`)
+    if(user === "travel-agent") {
+      if (!oneP || !onePh) {
+        return router.push(`${links.login}`)
+      }
     }
+     else {
+      if (!oneI || !oneP || !onePh) {
+        return router.push(`${links.login}`)
+      }
+    }
+
   }, [])
 
   return (
@@ -47,7 +58,7 @@ export default function ProfileClient() {
                     strokeLinejoin="round"/>
             </svg>
           </Link>
-          <Link href={`${links.mytTours}`} className="profile-item">
+          {userType === "tourist" && <Link href={`${links.mytTours}`} className="profile-item">
             <div className="profile-item__text">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -66,7 +77,7 @@ export default function ProfileClient() {
                     stroke="#292D32" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round"
                     strokeLinejoin="round"/>
             </svg>
-          </Link>
+          </Link>}
           <Link href={`${links.search}`} className="profile-item">
             <div className="profile-item__text">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

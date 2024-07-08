@@ -209,6 +209,14 @@ button:disabled {
   outline: 2px solid var(--primary-color);
 }
 
+.custom {
+  &-checkmark {
+    &-text {
+      width: 100%;
+    }
+  }
+}
+
 .input {
   &--error {
     border-color: #D5251B!important;
