@@ -135,7 +135,7 @@ a {
     &__left {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
     }
 
     &__right {
@@ -158,7 +158,7 @@ a {
       align-items: center;
       gap: 6px;
       img {
-        height: 38px!important;
+        height: 24px!important;
       }
     }
 
@@ -168,7 +168,7 @@ a {
     }
 
     span {
-      font-size: 12px;
+      font-size: 6px;
     }
 
     &--first {

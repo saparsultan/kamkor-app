@@ -9,6 +9,7 @@ import {useEffect, useState} from "react";
 import {getItem} from "@/services/storage.service";
 import translations from "@/translations";
 import '@/sass/header.scss'
+import gerb from "@/assets/logos/gerb.png";
 
 export default function Header() {
   const { locale } = useLocale();
@@ -45,6 +46,14 @@ export default function Header() {
                       priority
                       alt="Kamkor logo"
                   />
+                </Link>
+                <Link href="https://www.gov.kz/memleket/entities/tsm" target="_blank" className="header__link header__link--text">
+                  <Image
+                      src={gerb}
+                      priority
+                      alt="Ministry of Tourism and Sports of the RK"
+                  />
+                  <span dangerouslySetInnerHTML={{ __html: translations[locale].ministryTourismAndSports }}></span>
                 </Link>
               </div>
               <div className="header-top__right">
