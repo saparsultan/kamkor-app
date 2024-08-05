@@ -27,6 +27,7 @@ const translations = {
     iAgreePersonalData: 'Мен жеке деректерді беруге және өңдеуге келісемін',
     loader: 'Жүктеу...',
     ministryTourismAndSports: 'ҚР туризм және<br/> спорт министрлігі',
+    confirm: 'Растау',
     placeholder: {
       tourCode: 'Туркодты енгізіңіз',
       tourAgent: 'Туристік агенттіктің атын енгізіңіз',
@@ -41,7 +42,9 @@ const translations = {
       dataError: 'Жаңарту кезінде қате орын алды',
       incorrectPhoneAndPassport: 'Кіру ақпараты дұрыс еңгізілмеген.',
       provisionPersonalDataRequired: 'Жеке деректерді өңдеуді қамтамасыз ету үшін өріс келісімі қажет!',
-      errorOccurred: 'Қате орын алды: ішкі жүйе қатесі, кейінірек қайталап көріңіз'
+      errorOccurred: 'Қате орын алды: ішкі жүйе қатесі, кейінірек қайталап көріңіз',
+      errorInput: 'Енгізілген деректер жарамсыз.',
+      confirmSuccess: 'Туркоды сәтт расталды!'
     },
     title: {
       tourDetails: 'Тур мәліметтері',
@@ -72,8 +75,8 @@ const translations = {
       contactInfo: 'Байланыс ақпараты',
       authorization: 'Авторизация',
       authTravelAgent: 'Туристтік агент ретінде кіру',
-      authTourist: 'Турист ретінде кіру'
-
+      authTourist: 'Турист ретінде кіру',
+      confirmationTourCode: 'Тур кодын растау',
     },
     labels: {
       numberPhone: 'Телефон нөмірі',
@@ -133,6 +136,7 @@ const translations = {
     iAgreePersonalData: 'Даю согласие на предоставление и обработку персональных данных',
     loader: 'Загрузка...',
     ministryTourismAndSports: 'Министерство<br/> туризма и спорта РК',
+    confirm: 'Подтвердить',
     placeholder: {
       tourCode: 'Введите туркод',
       tourAgent: 'Введите название турагенства',
@@ -147,7 +151,9 @@ const translations = {
       dataError: 'Произошла ошибка при обновлении',
       incorrectPhoneAndPassport: 'Неправильные данные для входа.',
       provisionPersonalDataRequired: 'Поле согласие на предоставление обработку персональных данных обязателен!',
-      errorOccurred: 'Произошла ошибка внутренняя ошибка системы, попробуйте позже'
+      errorOccurred: 'Произошла ошибка внутренняя ошибка системы, попробуйте позже',
+      errorInput: 'Неправильные данные для ввода.',
+      confirmSuccess: 'Туркод успешно подтвердился!'
     },
     title: {
       tourDetails: 'Данные о туре',
@@ -178,7 +184,8 @@ const translations = {
       contactInfo: 'Контактная информация',
       authorization: 'Авторизация',
       authTravelAgent: 'Авторизоваться как турагент',
-      authTourist: 'Авторизоваться как турист'
+      authTourist: 'Авторизоваться как турист',
+      confirmationTourCode: 'Подтверждение туркода',
     },
     labels: {
       numberPhone: 'Номер телефона',

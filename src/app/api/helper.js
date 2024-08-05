@@ -41,6 +41,33 @@ export async function authTravelAgent(agentlogin, agentpass) {
     return await res.json();
 }
 
+export async function confirmTourCode(agentlogin, agentpass, tour, phone) {
+    const data =  {
+        module: "voucher",
+        section: "partner",
+        object: "packets",
+        param1: "tour",
+        agentlogin: agentlogin,
+        agentpass: agentpass,
+        input:{
+            tour: tour,
+            action:"sign",
+            phone: phone
+        }
+    }
+    const res = await fetch(
+        `http://report.fondkamkor.kz`,
+        {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        },
+    );
+    return await res.json();
+}
+
 export async function getTours(passport, pushId, phone) {
   const res = await fetch(
       `http://report.fondkamkor.kz/partner/packets/tour/gettourcodeslist?is_ajax=1&passport=${passport}&pushid=${pushId}&phone=${phone}`,
