@@ -128,7 +128,7 @@ export default function ConfirmClient() {
                            onChange={changePhone}/>
                 </div>
                 <button className='btn login-btn' type='submit'
-                        disabled={!confirm || isLoading}>{!isLoading ? <span>{translations[locale].confirm}</span> :
+                        disabled={isLoading}>{!isLoading ? <span>{translations[locale].confirm}</span> :
                     <span>{translations[locale].loader}</span>}</button>
             </form>
         </div>
