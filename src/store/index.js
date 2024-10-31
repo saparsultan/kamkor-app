@@ -29,6 +29,11 @@ export const useHelpInfoModal = create((set) => ({
   setInData: (content) => set(() => ({inData: content})),
 }));
 
+export const useAuth = create((set) => ({
+  isAuth: false,
+  toggleModal: () => set((state) => ({ isAuth: !state.isAuth })),
+}));
+
 // export const useRenameModal = create((set) => ({
 //   isShow: false,
 //   chatInfo: {},

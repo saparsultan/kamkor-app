@@ -1,14 +1,15 @@
-import ProfileClient from "@/components/screens/Profile.client";
+import AgenciesClient from "@/components/screens/Agencies.client";
 import "@/sass/home.scss";
 import "@/sass/page.scss";
-import "@/sass/profile.scss";
+import CodesClient from "@/components/screens/Codes.client";
 
-export default function Profile() {
+export default async function Codes() {
+
   return (
       <div className="page-blank__container" style={{margin: "20px 0"}}>
         <div className="container">
-          <ProfileClient/>
+          <CodesClient/>
         </div>
       </div>
   );
-}
+};

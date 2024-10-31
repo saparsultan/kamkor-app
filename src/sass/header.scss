@@ -136,6 +136,12 @@ a {
       display: flex;
       align-items: center;
       gap: 8px;
+
+      @media (max-width: 396px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+      }
     }
 
     &__right {
@@ -159,12 +165,18 @@ a {
       gap: 6px;
       img {
         height: 24px!important;
+        @media (max-width: 396px) {
+          height: 20px!important;
+        }
       }
     }
 
     img {
       width: auto;
       height: 40px;
+      @media (max-width: 396px) {
+        height: 32px;
+      }
     }
 
     span {

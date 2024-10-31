@@ -17,7 +17,7 @@ export default function Header() {
 
   useEffect(() => {
     const user = getItem('user');
-    const oneI = getItem('oneI');
+    // const oneI = getItem('oneI');
     const oneP = getItem('oneP');
     const onePh = getItem('onePh');
 
@@ -27,7 +27,7 @@ export default function Header() {
       }
     }
     else {
-      if (oneI || oneP || onePh) {
+      if (oneP || onePh) {
         setIsAuth(true)
       }
     }
@@ -58,7 +58,7 @@ export default function Header() {
               </div>
               <div className="header-top__right">
                 <LocaleSwitcher/>
-                <AuthBtn isAuth={isAuth} title={translations[locale].signIn}/>
+                <AuthBtn isAuth={isAuth} setIsAuth={setIsAuth} title={translations[locale].signIn}/>
               </div>
             </div>
           </div>

@@ -24,4 +24,5 @@ export const links = {
   tourist: 'tourist',
   confirm: 'confirm',
   travelAgent: 'travel-agent',
+  codes: 'codes',
 }

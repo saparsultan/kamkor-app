@@ -8,10 +8,12 @@ import {links} from "@/helper/constants";
 import {useRouter} from "next/navigation";
 import {Bounce, toast} from 'react-toastify';
 import Back from "@/components/ui/Back";
+import {useAuth} from "@/store";
 
 export default function LoginAgentClient() {
   const router = useRouter()
   const {locale} = useLocale();
+  const {isAuth, toggleAuth} = useAuth()
   const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
   const [confirm, setConfirm] = useState(false)
@@ -53,8 +55,10 @@ export default function LoginAgentClient() {
               setItem('oneP', password);
               setItem('onePh', login);
               setItem('user', "travel-agent");
-              setIsLoading(false)
-              router.push(`/${links.profile}`)}
+              setIsLoading(false);
+              router.push(`/${links.profile}`)
+              setTimeout(() => window.location.reload(), 1000);
+            }
             else {
               setPError(true)
               setPhError(true)

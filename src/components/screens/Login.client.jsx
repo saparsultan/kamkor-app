@@ -61,6 +61,7 @@ export default function LoginClient() {
               setItem('user', "tourist");
               setIsLoading(false)
               router.push(`/${links.profile}`)
+              setTimeout(() => window.location.reload(), 1000);
             } else {
               setPError(true)
               setPhError(true)

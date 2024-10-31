@@ -1,12 +1,12 @@
 "use client"
-import React, { useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import HeadPage from "@/components/ui/HeadPage";
 import translations from "@/translations";
 import {useLocale} from "@/context/locale";
 import {useCurrentInfoModal, useEmptyModal, useInfoModal} from "@/store";
 
-const AgenciesClient = ({data}) => {
-  // const {data, setData} = useTravelAgencies()
+const AgenciesClient = () => {
+  const [data, setData] = useState([])
   const {setData: setCurrentData} = useCurrentInfoModal()
   const {toggleModal} = useInfoModal()
   const { locale } = useLocale();
@@ -37,6 +37,16 @@ const AgenciesClient = ({data}) => {
     toggleModal()
     setCurrentData(item)
   }
+
+  useEffect(() => {
+    fetch(
+        `/api/agencies`
+    ).then(async (res) => {
+      const data = await res.json()
+      setData(data?.['variants'])
+    }).catch(e => console.error(e))
+
+  }, []);
 
   return (
       <div className="page-blank">

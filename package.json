@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3001",
+    "dev": "next dev -p 3002",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -11,20 +11,31 @@
   "dependencies": {
     "@capacitor/android": "^6.0.0",
     "@capacitor/core": "^6.0.0",
+    "@radix-ui/react-dialog": "^1.1.2",
+    "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-slot": "^1.1.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "crypto-js": "^4.2.0",
     "html-react-parser": "^5.1.10",
+    "lucide-react": "^0.453.0",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
     "react-toastify": "^10.0.5",
     "react-tooltip": "^5.26.4",
     "sass": "^1.77.2",
+    "tailwind-merge": "^2.5.4",
+    "tailwindcss-animate": "^1.0.7",
     "uuid": "^9.0.1",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
     "@capacitor/cli": "^6.0.0",
+    "autoprefixer": "^10.4.20",
     "eslint": "^8",
-    "eslint-config-next": "14.2.3"
+    "eslint-config-next": "14.2.3",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14"
   }
 }
