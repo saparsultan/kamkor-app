@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b8178aca-43b0-42a2-8122-70705be7b3ae" name="Changes" comment="feat: refactor tourcode app" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;saparsultan&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/saparsultan/kamkor-app.git&quot;,
+    &quot;accountId&quot;: &quot;4fe6a7e7-035e-4148-8488-6e0fee7eaf96&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/components/screens/LoginMain.client.jsx" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2ix949HzTSMzqK8iqmtaNcr13gq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/sultansyzdyk/WebstormProjects/kamkor-app/src/context&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/context" />
+      <recent name="$PROJECT_DIR$/src/app/api" />
+      <recent name="$PROJECT_DIR$/src/components/screens" />
+      <recent name="$PROJECT_DIR$/src/app/codes/[code]" />
+      <recent name="$PROJECT_DIR$/src/app/api/codes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/our" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b8178aca-43b0-42a2-8122-70705be7b3ae" name="Changes" comment="" />
+      <created>1720421166319</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1720421166319</updated>
+      <workItem from="1720421167229" duration="5959000" />
+      <workItem from="1720430682778" duration="20886000" />
+      <workItem from="1720508000308" duration="20000" />
+      <workItem from="1720701549262" duration="574000" />
+      <workItem from="1722877097228" duration="5689000" />
+      <workItem from="1722922401942" duration="808000" />
+      <workItem from="1727687473618" duration="1240000" />
+      <workItem from="1729948787207" duration="12967000" />
+      <workItem from="1730038887055" duration="26291000" />
+      <workItem from="1730181174937" duration="6378000" />
+      <workItem from="1730359511131" duration="2213000" />
+      <workItem from="1730371766247" duration="5788000" />
+      <workItem from="1730392241504" duration="7527000" />
+      <workItem from="1730399784025" duration="459000" />
+    </task>
+    <task id="LOCAL-00001" summary="add: added authorization as a travel agent">
+      <option name="closed" value="true" />
+      <created>1720471397674</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1720471397674</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix: raised the mts logo">
+      <option name="closed" value="true" />
+      <created>1720702005067</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1720702005067</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add: add confirm tourcode">
+      <option name="closed" value="true" />
+      <created>1722884147967</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1722884147967</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix: fix confirm page">
+      <option name="closed" value="true" />
+      <created>1722923211503</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1722923211503</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: refactor tourcode app">
+      <option name="closed" value="true" />
+      <created>1730400062620</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1730400062620</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add: added authorization as a travel agent" />
+    <MESSAGE value="fix: raised the mts logo" />
+    <MESSAGE value="add: add confirm tourcode" />
+    <MESSAGE value="fix: fix confirm page" />
+    <MESSAGE value="feat: refactor tourcode app" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: refactor tourcode app" />
+  </component>
+</project>
