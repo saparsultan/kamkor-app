@@ -3,11 +3,11 @@ import React, {useEffect, useState} from 'react';
 import HeadPage from "@/components/ui/HeadPage";
 import translations from "@/translations";
 import {useLocale} from "@/context/locale";
-import {useCurrentInfoModal, useEmptyModal, useInfoModal} from "@/store";
+import {useEmptyModal, useInfoModal} from "@/store";
 import {getItem} from "@/services/storage.service";
 import Link from "next/link";
 import {Skeleton} from "@/components/ui/skeleton";
-import {Check, UserCheck} from "lucide-react";
+import {UserCheck} from "lucide-react";
 import {
     Dialog,
     DialogContent,
@@ -39,7 +39,11 @@ const CodesClient = () => {
         const oneP = getItem('oneP');
         const onePh = getItem('onePh');
         if (oneP && onePh) {
-            fetch(`/api/codes?agentlogin=${onePh}&agentpass=${oneP}`)
+            fetch(`/api/codes?agentlogin=${onePh}&agentpass=${oneP}`, {
+                headers: {
+                    'Cache-Control': 'no-cache',
+                },
+            })
                 .then(async (res) => {
                     const result = await res.json();
                     if (result && result?.data && result?.data.length > 0) {

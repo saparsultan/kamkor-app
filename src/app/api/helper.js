@@ -4,6 +4,12 @@ export async function getTourCodeInfo(code) {
       {
         method: "GET",
         mode: "no-cors",
+        headers: {
+          'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+          'Pragma': 'no-cache',
+          'Expires': '0',
+          'Surrogate-Control': 'no-store',
+        },
       },
   );
   return await res.json();
@@ -15,6 +21,12 @@ export async function authUser(passport, pushId, phone) {
       {
         method: "POST",
         mode: "no-cors",
+        headers: {
+          'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+          'Pragma': 'no-cache',
+          'Expires': '0',
+          'Surrogate-Control': 'no-store',
+        },
       },
   );
   return await res.json();
@@ -33,6 +45,10 @@ export async function authTravelAgent(agentlogin, agentpass) {
         {
             method: "POST",
             headers: {
+                'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '0',
+                'Surrogate-Control': 'no-store',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
@@ -56,6 +72,10 @@ export async function getCodes(agentlogin, agentpass) {
         {
             method: "POST",
             headers: {
+                'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '0',
+                'Surrogate-Control': 'no-store',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
@@ -95,9 +115,15 @@ export async function getTours(passport, pushId, phone) {
   const res = await fetch(
       `http://report.fondkamkor.kz/partner/packets/tour/gettourcodeslist?is_ajax=1&passport=${passport}&pushid=${pushId}&phone=${phone}`,
       {
-        method: "POST",
-        mode: "no-cors",
-      },
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+              'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+              'Pragma': 'no-cache',
+              'Expires': '0',
+              'Surrogate-Control': 'no-store',
+          },
+      }
   );
   return await res.json();
 }
@@ -112,6 +138,10 @@ export async function getAgencies() {
                 Accept: "application/json",
                 "Content-Type": "application/json",
                 "Access-Control-Allow-Origin": true,
+                'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '0',
+                'Surrogate-Control': 'no-store',
             },
         },
     );

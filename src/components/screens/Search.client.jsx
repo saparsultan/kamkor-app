@@ -18,7 +18,11 @@ export default function SearchClient(props) {
     if (searchData && searchData !== "") {
       setLoading(true);
       setCodeName(searchData)
-      fetch(`/api/tourcode?code=${searchData}`)
+      fetch(`/api/tourcode?code=${searchData}`, {
+          headers: {
+              'Cache-Control': 'no-cache',
+          },
+      })
           .then(async (response) => {
             const result = await response.json();
             setTourCodeInfo(result);

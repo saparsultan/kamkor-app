@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8178aca-43b0-42a2-8122-70705be7b3ae" name="Changes" comment="feat: refactor tourcode app" />
+    <list default="true" id="b8178aca-43b0-42a2-8122-70705be7b3ae" name="Changes" comment="feat: include shadcn ui">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/helper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Agencies.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Agencies.client.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Codes.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Codes.client.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/MainEdit.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/MainEdit.client.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Search.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Search.client.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Tours.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Tours.client.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,6 +108,8 @@
       <workItem from="1730371766247" duration="5788000" />
       <workItem from="1730392241504" duration="7527000" />
       <workItem from="1730399784025" duration="459000" />
+      <workItem from="1730539597734" duration="249000" />
+      <workItem from="1731039672059" duration="4463000" />
     </task>
     <task id="LOCAL-00001" summary="add: added authorization as a travel agent">
       <option name="closed" value="true" />
@@ -141,7 +151,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730400062620</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: include shadcn ui">
+      <option name="closed" value="true" />
+      <created>1730539776796</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1730539776796</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,6 +194,7 @@
     <MESSAGE value="add: add confirm tourcode" />
     <MESSAGE value="fix: fix confirm page" />
     <MESSAGE value="feat: refactor tourcode app" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: refactor tourcode app" />
+    <MESSAGE value="feat: include shadcn ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: include shadcn ui" />
   </component>
 </project>

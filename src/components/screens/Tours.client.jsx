@@ -31,7 +31,12 @@ const ToursClient = () => {
         const oneP = getItem('oneP');
         const onePh = getItem('onePh');
         if (oneI && oneP && onePh) {
-            fetch(`/api/tours?passport=${oneP}&pushId=${oneI}&phone=${onePh}`)
+            fetch(`/api/tours?passport=${oneP}&pushId=${oneI}&phone=${onePh}`, {
+                method: 'GET',
+                headers: {
+                    'Cache-Control': 'no-cache',
+                },
+            })
                 .then(async (res) => {
                     const result = await res.json();
                     setData(result?.return)

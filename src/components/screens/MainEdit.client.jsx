@@ -51,9 +51,9 @@ export default function MainEditClient() {
     setPhoneEdit(e.target.value)
   }
 
-  const changePassport = (e) => {
-    setPassportEdit(e.target.value)
-  }
+  // const changePassport = (e) => {
+  //   setPassportEdit(e.target.value)
+  // }
 
   const sign = async (e) => {
     e.preventDefault()
@@ -109,14 +109,14 @@ export default function MainEditClient() {
                    value={phoneEdit}
                    onChange={changePhone} required/>
           </div>
-          <div className="login-form-field" style={{alignItems: 'flex-start'}}>
-            <div className="label">
-              {translations[locale].labels.numberPassport}
-            </div>
-            <input type="text" placeholder={translations[locale].placeholder.numberPassport} className="input"
-                   value={passportEdit}
-                   onChange={changePassport} required/>
-          </div>
+          {/*<div className="login-form-field" style={{alignItems: 'flex-start'}}>*/}
+          {/*  <div className="label">*/}
+          {/*    {translations[locale].labels.numberPassport}*/}
+          {/*  </div>*/}
+          {/*  <input type="text" placeholder={translations[locale].placeholder.numberPassport} className="input"*/}
+          {/*         value={passportEdit}*/}
+          {/*         onChange={changePassport} required disabled/>*/}
+          {/*</div>*/}
           <button className='btn login-btn' type='submit'>{translations[locale].save}</button>
         </form>
       </div>

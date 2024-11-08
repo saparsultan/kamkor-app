@@ -40,7 +40,11 @@ const AgenciesClient = () => {
 
   useEffect(() => {
     fetch(
-        `/api/agencies`
+        `/api/agencies`, {
+          headers: {
+            'Cache-Control': 'no-cache',
+          },
+        }
     ).then(async (res) => {
       const data = await res.json()
       setData(data?.['variants'])
