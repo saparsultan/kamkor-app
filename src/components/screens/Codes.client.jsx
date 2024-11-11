@@ -28,6 +28,7 @@ const CodesClient = () => {
     const {locale} = useLocale();
     const {toggleModal: toggleEmptyModal} = useEmptyModal()
     const [data, setData] = useState(null)
+    const [firms, setFirms] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
     const [phoneNumber, setPhoneNumber] = useState('');
     const [code, setCode] = useState('');
@@ -48,7 +49,8 @@ const CodesClient = () => {
                     const result = await res.json();
                     if (result && result?.data && result?.data.length > 0) {
                         console.log("result.data", result.data)
-                        setData(result.data)
+                        setData(result.data);
+                        setFirms(result.firms);
                         setIsLoading(false);
                     } else {
                         setIsLoading(false);
@@ -148,6 +150,10 @@ const CodesClient = () => {
         }
     }
 
+    const getFirms = (id) => {
+        return firms.filter(item => item?.rowid === id)[0]?.orgname
+    }
+
     return (
         <div className="page-blank">
             <HeadPage title="Список туркодов" isDesc={true}
@@ -205,7 +211,7 @@ const CodesClient = () => {
                             </div>
                             <div className="info-item__block">
                                 <div className="info-item__label">Туроператор:</div>
-                                <div className="info-item__text">{paramsHash.q_touragent}</div>
+                                <div className="info-item__text">{getFirms(query.firmid)}</div>
                             </div>
                             <div className="info-item__block">
                                 <div className="info-item__label">Номер паспорта:</div>
