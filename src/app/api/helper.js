@@ -4,6 +4,7 @@ export async function getTourCodeInfo(code) {
       {
         method: "GET",
         mode: "no-cors",
+          cache: 'no-store',
         headers: {
           'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
           'Pragma': 'no-cache',
@@ -21,6 +22,7 @@ export async function authUser(passport, pushId, phone) {
       {
         method: "POST",
         mode: "no-cors",
+          cache: 'no-store',
         headers: {
           'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
           'Pragma': 'no-cache',
@@ -44,6 +46,7 @@ export async function authTravelAgent(agentlogin, agentpass) {
         `http://report.fondkamkor.kz`,
         {
             method: "POST",
+            cache: 'no-store',
             headers: {
                 'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
                 'Pragma': 'no-cache',
@@ -71,6 +74,7 @@ export async function getCodes(agentlogin, agentpass) {
         `http://report.fondkamkor.kz`,
         {
             method: "POST",
+            cache: 'no-store',
             headers: {
                 'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
                 'Pragma': 'no-cache',
@@ -117,6 +121,7 @@ export async function getTours(passport, pushId, phone) {
       {
           method: "POST",
           mode: "no-cors",
+          cache: 'no-store',
           headers: {
               'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
               'Pragma': 'no-cache',
@@ -134,6 +139,7 @@ export async function getAgencies() {
         {
             method: "GET",
             mode: "no-cors",
+            cache: 'no-store',
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json",

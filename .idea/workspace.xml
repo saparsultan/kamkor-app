@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8178aca-43b0-42a2-8122-70705be7b3ae" name="Changes" comment="feat: include shadcn ui">
+    <list default="true" id="b8178aca-43b0-42a2-8122-70705be7b3ae" name="Changes" comment="feat: fix cache components">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/agencies/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/agencies/route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/codes/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/codes/route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/confirm-tourcode/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/confirm-tourcode/route.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/api/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/helper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/Agencies.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Agencies.client.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/Codes.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Codes.client.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/MainEdit.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/MainEdit.client.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/Search.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Search.client.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/Tours.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Tours.client.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/sign/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/sign/route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/tourcode/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/tourcode/route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/tours/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/tours/route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/travel-agent/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/travel-agent/route.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +111,9 @@
       <workItem from="1730392241504" duration="7527000" />
       <workItem from="1730399784025" duration="459000" />
       <workItem from="1730539597734" duration="249000" />
-      <workItem from="1731039672059" duration="4463000" />
+      <workItem from="1731039672059" duration="4550000" />
+      <workItem from="1731086645349" duration="654000" />
+      <workItem from="1731303546072" duration="1063000" />
     </task>
     <task id="LOCAL-00001" summary="add: added authorization as a travel agent">
       <option name="closed" value="true" />
@@ -159,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730539776796</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: fix cache components">
+      <option name="closed" value="true" />
+      <created>1731055195337</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1731055195337</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +207,7 @@
     <MESSAGE value="fix: fix confirm page" />
     <MESSAGE value="feat: refactor tourcode app" />
     <MESSAGE value="feat: include shadcn ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: include shadcn ui" />
+    <MESSAGE value="feat: fix cache components" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: fix cache components" />
   </component>
 </project>
