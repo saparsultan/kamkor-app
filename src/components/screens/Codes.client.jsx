@@ -93,12 +93,13 @@ const CodesClient = () => {
 
     const sign = async (e) => {
         e.preventDefault()
+        console.log("tour", code)
         const oneP = getItem('oneP');
         const onePh = getItem('onePh');
         setIsLoading(true);
         setIsLoadingSign(true);
         if (code && phoneNumber) {
-            await fetch(`/api/confirm-tourcode?agentlogin=${onePh}&agentpass=${oneP}&tour=30540621-16285119&phone=${phoneNumber}`)
+            await fetch(`/api/confirm-tourcode?agentlogin=${onePh}&agentpass=${oneP}&tour=${code}&phone=${phoneNumber}`)
                 .then(async (res) => {
                     const result = await res.json();
                     console.log("result", result)
@@ -157,6 +158,11 @@ const CodesClient = () => {
 
     const getFirms = (id) => {
         return firms.filter(item => item?.rowid === id)[0]?.orgname
+    }
+
+    const onChangeDialog = () => {
+        setIsOpen(!isOpen);
+        setIsLoadingSign(false);
     }
 
     return (
@@ -226,7 +232,7 @@ const CodesClient = () => {
                                 <div className="info-item__label">Подтверждения туркода:</div>
                                 {paramsHash.q_agent_assign && paramsHash.q_agent_assign === '1' ?
                                     <div className="info-item__text success">Подтвержден</div> :
-                                    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+                                    <Dialog open={isOpen} onOpenChange={onChangeDialog}>
                                         <DialogTrigger asChild>
                                             <div
                                                 className="btn--primary flex items-center justify-center gap-1.5 text-xs py-1.5 px-3 rounded-full cursor-pointer"
