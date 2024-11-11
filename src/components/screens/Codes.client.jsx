@@ -7,7 +7,7 @@ import {useEmptyModal, useInfoModal} from "@/store";
 import {getItem} from "@/services/storage.service";
 import Link from "next/link";
 import {Skeleton} from "@/components/ui/skeleton";
-import {UserCheck} from "lucide-react";
+import {Loader2, UserCheck} from "lucide-react";
 import {
     Dialog,
     DialogContent,
@@ -33,6 +33,7 @@ const CodesClient = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [code, setCode] = useState('');
     const [isOpen, setIsOpen] = useState(false);
+    const [isLoadingSign, setIsLoadingSign] = useState(false);
 
     useEffect(() => {
         setIsLoading(true);
@@ -61,7 +62,7 @@ const CodesClient = () => {
                     console.log({e});
                 });
         }
-    }, []);
+    }, [isLoadingSign]);
 
     const formatDate = (dateString) => {
         const date = new Date(dateString);
@@ -94,7 +95,8 @@ const CodesClient = () => {
         e.preventDefault()
         const oneP = getItem('oneP');
         const onePh = getItem('onePh');
-        setIsLoading(true)
+        setIsLoading(true);
+        setIsLoadingSign(true);
         if (code && phoneNumber) {
             await fetch(`/api/confirm-tourcode?agentlogin=${onePh}&agentpass=${oneP}&tour=30540621-16285119&phone=${phoneNumber}`)
                 .then(async (res) => {
@@ -102,6 +104,7 @@ const CodesClient = () => {
                     console.log("result", result)
                     if (result && result?.data) {
                         setIsLoading(false)
+                        setIsLoadingSign(false);
                         setIsOpen(false); // Закрываем диалог
                         await toast.success(`${translations[locale].toasts.confirmSuccess}`, {
                             position: "top-center",
@@ -116,8 +119,9 @@ const CodesClient = () => {
                         });
                     } else {
                         setIsLoading(false)
+                        setIsLoadingSign(false);
                         setIsOpen(false); // Закрываем диалог
-                        await toast.error(`${translations[locale].toasts.errorInput}`, {
+                        await toast.error(`Ошибка со стороны сервера, попробуйте позднее`, {
                             position: "top-center",
                             autoClose: 2000,
                             hideProgressBar: false,
@@ -132,6 +136,7 @@ const CodesClient = () => {
 
                 })
                 .catch(async (e) => {
+                    setIsLoadingSign(false);
                     setIsOpen(false); // Закрываем диалог
                     await toast.error(`${translations[locale].toasts.errorOccurred}`, {
                         position: "top-center",
@@ -258,7 +263,13 @@ const CodesClient = () => {
                                                 </div>
                                             </div>
                                             <DialogFooter>
-                                                <Button type="button" onClick={sign}>Подтвердить</Button>
+                                                <Button type="button" onClick={sign} disabled={isLoadingSign}>
+                                                    {
+                                                        isLoadingSign ? <><Loader2
+                                                                className="animate-spin"/><span>Пожалуйста подождите</span></> :
+                                                            <span>Подтвердить</span>
+                                                    }
+                                                </Button>
                                             </DialogFooter>
                                         </DialogContent>
                                     </Dialog>
@@ -268,7 +279,8 @@ const CodesClient = () => {
                                     // </div>
                                 }
                             </div>
-                            <Link href={`/codes/${paramsHash.q_number}`} className="info-item__link" style={{ textDecoration: 'none' }}>
+                            <Link href={`/codes/${paramsHash.q_number}`} className="info-item__link"
+                                  style={{textDecoration: 'none'}}>
                                 <span>Подробнее</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                      fill="none"
