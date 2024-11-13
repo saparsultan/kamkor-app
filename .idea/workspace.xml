@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8178aca-43b0-42a2-8122-70705be7b3ae" name="Changes" comment="fix: fix codes list">
+    <list default="true" id="b8178aca-43b0-42a2-8122-70705be7b3ae" name="Changes" comment="fix: fix codes list and confirm tourcode">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/Codes.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Codes.client.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Tours.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Tours.client.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +108,8 @@
       <workItem from="1731086645349" duration="654000" />
       <workItem from="1731303546072" duration="14283000" />
       <workItem from="1731347992935" duration="612000" />
-      <workItem from="1731348609032" duration="948000" />
+      <workItem from="1731348609032" duration="1827000" />
+      <workItem from="1731479534835" duration="1284000" />
     </task>
     <task id="LOCAL-00001" summary="add: added authorization as a travel agent">
       <option name="closed" value="true" />
@@ -190,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731347140755</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix: fix codes list and confirm tourcode">
+      <option name="closed" value="true" />
+      <created>1731349647634</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1731349647634</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +239,7 @@
     <MESSAGE value="fix: fix cache api request" />
     <MESSAGE value="fix: fix tour operator in fetch codes" />
     <MESSAGE value="fix: fix codes list" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: fix codes list" />
+    <MESSAGE value="fix: fix codes list and confirm tourcode" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: fix codes list and confirm tourcode" />
   </component>
 </project>

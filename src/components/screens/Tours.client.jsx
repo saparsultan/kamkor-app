@@ -113,6 +113,10 @@ const ToursClient = () => {
                                 <div className="info-item__text">{item?.tourcode}</div>
                             </div>
                             <div className="info-item__block">
+                                <div className="info-item__label">{translations[locale].labels.numberPassport}:</div>
+                                <div className="info-item__text">{item?.passport}</div>
+                            </div>
+                            <div className="info-item__block">
                                 <div className="info-item__label">{translations[locale].labels.binTourAgent}:</div>
                                 <div className="info-item__text">{item?.touragent_bin}</div>
                             </div>
@@ -150,7 +154,7 @@ const ToursClient = () => {
                     toggleFilter && filterData && filterData.length > 0 && filterData.map((item, i) => {
                         return (
                             <div className="info-item" key={`${item?.tourcode} + ${i}`}>
-                                <div className="info-item__block">
+                            <div className="info-item__block">
                                     <div className="info-item__label">{translations[locale].labels.numberTourCode}:
                                     </div>
                                     <div className="info-item__text">{item?.tourcode}</div>
