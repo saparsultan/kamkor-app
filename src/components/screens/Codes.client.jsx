@@ -21,6 +21,7 @@ import {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
 import PhoneInput from "@/components/our/PhoneInput";
 import {Bounce, toast} from "react-toastify";
+import Loading from "@/components/ui/Loading";
 
 const CodesClient = () => {
     // const {data, setData} = useTravelAgencies()
@@ -35,7 +36,10 @@ const CodesClient = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isLoadingSign, setIsLoadingSign] = useState(false);
 
+    const [isSend, setIsSend] = useState(false);
+
     useEffect(() => {
+        setIsSend(true);
         setIsLoading(true);
         const oneI = getItem('oneI');
         const oneP = getItem('oneP');
@@ -52,12 +56,15 @@ const CodesClient = () => {
                         console.log("result.data", result.data)
                         setData(result.data);
                         setFirms(result.firms);
+                        setIsSend(false);
                         setIsLoading(false);
                     } else {
+                        setIsSend(false);
                         setIsLoading(false);
                     }
                 })
                 .catch((e) => {
+                    setIsSend(false);
                     setIsLoading(false);
                     console.log({e});
                 });
@@ -97,6 +104,7 @@ const CodesClient = () => {
         const oneP = getItem('oneP');
         const onePh = getItem('onePh');
         setIsLoading(true);
+        setIsSend(true);
         setIsLoadingSign(true);
         if (code && phoneNumber) {
             await fetch(`/api/confirm-tourcode?agentlogin=${onePh}&agentpass=${oneP}&tour=${code}&phone=${phoneNumber}`)
@@ -104,6 +112,7 @@ const CodesClient = () => {
                     const result = await res.json();
                     console.log("result", result)
                     if (result && result?.data) {
+                        setIsSend(false);
                         setIsLoading(false)
                         setIsLoadingSign(false);
                         setIsOpen(false); // Закрываем диалог
@@ -119,6 +128,7 @@ const CodesClient = () => {
                             transition: Bounce,
                         });
                     } else {
+                        setIsSend(false);
                         setIsLoading(false)
                         setIsLoadingSign(false);
                         setIsOpen(false); // Закрываем диалог
@@ -137,6 +147,7 @@ const CodesClient = () => {
 
                 })
                 .catch(async (e) => {
+                    setIsSend(false);
                     setIsLoadingSign(false);
                     setIsOpen(false); // Закрываем диалог
                     await toast.error(`${translations[locale].toasts.errorOccurred}`, {
@@ -162,6 +173,7 @@ const CodesClient = () => {
 
     const onChangeDialog = () => {
         setIsOpen(!isOpen);
+        setIsSend(false);
         setIsLoadingSign(false);
     }
 
@@ -169,7 +181,12 @@ const CodesClient = () => {
         <div className="page-blank">
             <HeadPage title="Список туркодов" isDesc={true}
                       description={data && data.length > 0 ? `${data.length} туркодов, ${data.length} клиентов` : null}/>
-            <div className="info-list">
+            {
+                isSend && <div className="loader my-5">
+                    <Loading/>
+                </div>
+            }
+            <div className="info-list" style={isSend ? {'pointerEvents': 'none', opacity: '0.4'} : {}}>
                 {data && data.length > 0 && data.map(item => {
                     const paramsHash = item?.params_hash;
                     const client = item?.clients[0];

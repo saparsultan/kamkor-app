@@ -4,6 +4,7 @@ import HeadPage from "@/components/ui/HeadPage";
 import translations from "@/translations";
 import {useLocale} from "@/context/locale";
 import {useCurrentInfoModal, useEmptyModal, useInfoModal} from "@/store";
+import Loading from "@/components/ui/Loading";
 
 const AgenciesClient = () => {
   const [data, setData] = useState([])
@@ -13,15 +14,18 @@ const AgenciesClient = () => {
   const {toggleModal: toggleEmptyModal} = useEmptyModal()
   const [value, setValue] = useState('')
   const [toggleFilter, setToggleFilter] = useState(false)
-  const [filterData, setFilterData] = useState([])
+  const [filterData, setFilterData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false)
 
   const onFilterData = () => {
     if (value && value !== '') {
+      setIsLoading(true);
       setToggleFilter(true)
       const updatedList = data.filter((item) =>
           item?.tourfirmname.toLowerCase().includes(value.toLowerCase()),
       );
       setFilterData(updatedList)
+      setIsLoading(false);
     }
   }
 
@@ -29,6 +33,7 @@ const AgenciesClient = () => {
     const target = e.target.value
     setValue(target)
     if(target === '') {
+      setIsLoading(false);
       setToggleFilter(false)
     }
   }
@@ -39,6 +44,7 @@ const AgenciesClient = () => {
   }
 
   useEffect(() => {
+    setIsLoading(true);
     fetch(
         `/api/agencies`, {
           headers: {
@@ -46,9 +52,13 @@ const AgenciesClient = () => {
           },
         }
     ).then(async (res) => {
-      const data = await res.json()
+      const data = await res.json();
+      setIsLoading(false);
       setData(data?.['variants'])
-    }).catch(e => console.error(e))
+    }).catch(e => {
+      setIsLoading(true);
+      console.error(e)
+    })
 
   }, []);
 
@@ -125,7 +135,7 @@ const AgenciesClient = () => {
         </div>
         <div className="page-blank__list-wrap">
           <ul className="page-blank__list">
-            {!toggleFilter && data && data.length > 0 && (
+            {!isLoading ? !toggleFilter && data && data.length > 0 && (
                 data.map((item, i) => {
                   return (
                       <li className="page-blank__item" key={`${item?.id} + ${i}`} onClick={() => onShowInfo(item)}>
@@ -133,7 +143,9 @@ const AgenciesClient = () => {
                       </li>
                   );
                 })
-            )
+            ) : <div className="loader" style={{marginTop: "20px"}}>
+              <Loading/>
+            </div>
             }
             {
               toggleFilter && filterData && filterData.length > 0 ? filterData.map((item, i) => {

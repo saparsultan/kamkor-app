@@ -119,33 +119,33 @@ export default function CodePageClient(props) {
                   Турагент
                 </div>
                 <div className="blank-content__list">
-                  <li className="blank-content__item">
-                    <span>{translations[locale].title.bin}</span>
-                    <span>{tourCodeInfo?.data?.touragent?.bin}</span>
-                  </li>
+                  {/*<li className="blank-content__item">*/}
+                  {/*  <span>{translations[locale].title.bin}</span>*/}
+                  {/*  <span>{tourCodeInfo?.data?.touragent?.bin}</span>*/}
+                  {/*</li>*/}
                   <li className="blank-content__item">
                     <span>{translations[locale].title.name}</span>
                     <span>{tourCodeInfo?.data?.touragent?.name}</span>
                   </li>
                 </div>
 
-                <div className="blank-content__caption">
-                  Турист
-                </div>
-                <div className="blank-content__list">
-                  <li className="blank-content__item">
-                    <span>{translations[locale].title.passport}</span>
-                    <span>{tourCodeInfo?.data?.passport}</span>
-                  </li>
-                  <li className="blank-content__item">
-                    <span>{translations[locale].title.issuedBy}</span>
-                    <span>{tourCodeInfo?.data?.issued_by}</span>
-                  </li>
-                  <li className="blank-content__item">
-                    <span>{translations[locale].title.passportIssued}</span>
-                    <span>{tourCodeInfo?.data?.issued_date}</span>
-                  </li>
-                </div>
+                {/*<div className="blank-content__caption">*/}
+                {/*  Турист*/}
+                {/*</div>*/}
+                {/*<div className="blank-content__list">*/}
+                {/*  /!*<li className="blank-content__item">*!/*/}
+                {/*  /!*  <span>{translations[locale].title.passport}</span>*!/*/}
+                {/*  /!*  <span>{tourCodeInfo?.data?.passport}</span>*!/*/}
+                {/*  /!*</li>*!/*/}
+                {/*  <li className="blank-content__item">*/}
+                {/*    <span>{translations[locale].title.issuedBy}</span>*/}
+                {/*    <span>{tourCodeInfo?.data?.issued_by}</span>*/}
+                {/*  </li>*/}
+                {/*  <li className="blank-content__item">*/}
+                {/*    <span>{translations[locale].title.passportIssued}</span>*/}
+                {/*    <span>{tourCodeInfo?.data?.issued_date}</span>*/}
+                {/*  </li>*/}
+                {/*</div>*/}
               </div>
             </>
         ) : (

@@ -87,7 +87,6 @@ const translations = {
       tourOperator: 'Туроператор',
       IATAAirportCode: 'IATA әуежай коды',
       numberTourCode: 'Тур кодының нөмірі',
-
       login: 'Логин',
       userType: 'Қолданушы түрі',
       legalTypeOrg: 'Ұйымның құқықтық түрі',
