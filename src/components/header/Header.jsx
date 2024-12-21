@@ -41,19 +41,22 @@ export default function Header() {
             <div className="header-top">
               <div className="header-top__left">
                 <Link href="/" className="header__link">
-                  <Image
-                      src={logo}
-                      priority
-                      alt="Kamkor logo"
-                  />
+                  <img src='/logos/fondkamkor.png' alt="Kamkor logo"/>
+                  {/*<Image*/}
+                  {/*    src={logo}*/}
+                  {/*    priority*/}
+                  {/*    alt="Kamkor logo"*/}
+                  {/*/>*/}
                 </Link>
-                <Link href="https://www.gov.kz/memleket/entities/tsm" target="_blank" className="header__link header__link--text">
-                  <Image
-                      src={gerb}
-                      priority
-                      alt="Ministry of Tourism and Sports of the RK"
-                  />
-                  <span dangerouslySetInnerHTML={{ __html: translations[locale].ministryTourismAndSports }}></span>
+                <Link href="https://www.gov.kz/memleket/entities/tsm" target="_blank"
+                      className="header__link header__link--text">
+                  <img src='/logos/gerb.png' alt="Ministry of Tourism and Sports of the RK"/>
+                  {/*<Image*/}
+                  {/*    src={gerb}*/}
+                  {/*    priority*/}
+                  {/*    alt="Ministry of Tourism and Sports of the RK"*/}
+                  {/*/>*/}
+                  <span dangerouslySetInnerHTML={{__html: translations[locale].ministryTourismAndSports}}></span>
                 </Link>
               </div>
               <div className="header-top__right">

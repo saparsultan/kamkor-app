@@ -5,6 +5,7 @@ import Loading from "@/components/ui/Loading";
 import HeadPage from "@/components/ui/HeadPage";
 import translations from "@/translations";
 import {useLocale} from "@/context/locale";
+import KamkorService from "@/services/kamkor.service";
 
 export default function SearchClient(props) {
   const {locale} = useLocale();
@@ -17,15 +18,10 @@ export default function SearchClient(props) {
   useEffect(() => {
     if (searchData && searchData !== "") {
       setLoading(true);
-      setCodeName(searchData)
-      fetch(`/api/tourcode?code=${searchData}`, {
-          headers: {
-              'Cache-Control': 'no-cache',
-          },
-      })
+      setCodeName(searchData);
+      KamkorService.getTourCodeInfo(searchData)
           .then(async (response) => {
-            const result = await response.json();
-            setTourCodeInfo(result);
+            setTourCodeInfo(response);
             setLoading(false);
           })
           .catch((e) => {

@@ -8,6 +8,7 @@ import {useLocale} from "@/context/locale";
 import {links} from "@/helper/constants";
 import Link from "next/link";
 import Loading from "@/components/ui/Loading";
+import KamkorService from "@/services/kamkor.service";
 
 const ToursClient = () => {
     const router = useRouter()
@@ -35,15 +36,12 @@ const ToursClient = () => {
         const onePh = getItem('onePh');
         if (oneI && oneP && onePh) {
             setIsLoading(true);
-            fetch(`/api/tours?passport=${oneP}&pushId=${oneI}&phone=${onePh}`, {
-                method: 'GET',
-                headers: {
-                    'Cache-Control': 'no-cache',
-                },
-            })
-                .then(async (res) => {
-                    const result = await res.json();
-                    const sortedTours = result?.return.sort((a, b) => {
+
+            KamkorService.getTouristToursList(oneP, oneI, onePh)
+                .then( (res) => {
+                    // const result =  res.json();
+                    console.log("res", res)
+                    const sortedTours = res?.return.sort((a, b) => {
                         const dateA = new Date(a.date_from);
                         const dateB = new Date(b.date_from);
                         return dateB.getTime() - dateA.getTime();

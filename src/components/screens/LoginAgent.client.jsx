@@ -9,6 +9,7 @@ import {useRouter} from "next/navigation";
 import {Bounce, toast} from 'react-toastify';
 import Back from "@/components/ui/Back";
 import {useAuth} from "@/store";
+import KamkorService from "@/services/kamkor.service";
 
 export default function LoginAgentClient() {
   const router = useRouter()
@@ -48,9 +49,8 @@ export default function LoginAgentClient() {
       });
     }
     if (login && password && confirm) {
-      await fetch(`/api/travel-agent?agentlogin=${login}&agentpass=${password}`)
-          .then(async (res) => {
-            const result = await res.json();
+      KamkorService.authTravelAgent(login, password)
+          .then(async (result) => {
             if (result && result?.info) {
               setItem('oneP', password);
               setItem('onePh', login);

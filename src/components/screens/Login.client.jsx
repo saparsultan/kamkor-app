@@ -8,6 +8,7 @@ import {links} from "@/helper/constants";
 import {useRouter} from "next/navigation";
 import {Bounce, toast} from 'react-toastify';
 import Back from "@/components/ui/Back";
+import KamkorService from "@/services/kamkor.service";
 
 export default function LoginClient() {
   const router = useRouter()
@@ -49,9 +50,9 @@ export default function LoginClient() {
     }
     if (phone && passport && confirm) {
       const pushId = await generateId()
-      await fetch(`/api/sign?passport=${passport}&pushId=${oneI ? oneI : pushId}&phone=${phone}`)
-          .then(async (res) => {
-            const result = await res.json();
+      const idPush = oneI ? oneI : pushId;
+      KamkorService.authUser(passport, idPush, phone)
+          .then(async (result) => {
             if (result && result?.return?.code && result?.return?.code === 200) {
               if (!oneI) {
                 setItem('oneI', pushId);

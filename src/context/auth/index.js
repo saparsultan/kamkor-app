@@ -1,6 +1,7 @@
 "use client"
 import {useEffect} from 'react';
 import {getItem, removeItem} from "@/services/storage.service";
+import KamkorService from "@/services/kamkor.service";
 
 export const AuthProvider = ({children}) => {
     useEffect(() => {
@@ -11,9 +12,8 @@ export const AuthProvider = ({children}) => {
 
         if (oneP && onePh) {
             if (user === "travel-agent") {
-                fetch(`/api/travel-agent?agentlogin=${onePh}&agentpass=${oneP}`)
-                    .then(async (res) => {
-                        const result = await res.json();
+                KamkorService.authTravelAgent(onePh, oneP)
+                    .then(async (result) => {
                         if (!result?.info) {
                             removeItem('user');
                             removeItem('oneP');
@@ -31,9 +31,8 @@ export const AuthProvider = ({children}) => {
                     });
             }
             if (user === "tourist") {
-                fetch(`/api/sign?passport=${oneP}&pushId=${oneI}&phone=${onePh}`)
-                    .then(async (res) => {
-                        const result = await res.json();
+                KamkorService.authUser(oneP, oneI, onePh)
+                    .then(async (result) => {
                         if (result && result?.return?.code === 404) {
                             removeItem('user');
                             removeItem('oneP');

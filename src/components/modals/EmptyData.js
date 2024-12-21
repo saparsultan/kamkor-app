@@ -1,10 +1,8 @@
 import {useEffect, useRef} from 'react';
-import Image from "next/image";
 import Link from "next/link";
 import {useEmptyModal} from "@/store";
 import {useLocale} from "@/context/locale";
 import translations from "@/translations";
-import emptyImage from '@/assets/images/no-code.png'
 
 export default function EmptyData() {
   const {locale} = useLocale();
@@ -38,7 +36,8 @@ export default function EmptyData() {
               <div className="modal__desc">
                 {translations[locale].contactConsultation}
               </div>
-              <Image src={emptyImage} priority={true} alt={translations[locale].noTourAgent} className="modal__img"/>
+              {/*<Image src={emptyImage} priority={true} alt={translations[locale].noTourAgent} className="modal__img"/>*/}
+              <img src='/images/no-code.png' alt={translations[locale].noTourAgent} className="modal__img" />
               <Link href='https://api.whatsapp.com/send/?phone=77018880395&text&type=phone_number&app_absent=0'
                     target="_blank"
                     className="item-btn item-btn--primary"

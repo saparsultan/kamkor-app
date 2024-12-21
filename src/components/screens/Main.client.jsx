@@ -8,6 +8,7 @@ import {useLocale} from "@/context/locale";
 import {getItem} from "@/services/storage.service";
 import {useRouter} from "next/navigation";
 import {Bounce, toast} from "react-toastify";
+import KamkorService from "@/services/kamkor.service";
 
 export default function MainClient() {
     const {locale} = useLocale();
@@ -53,9 +54,8 @@ export default function MainClient() {
     }, [])
 
     const sign = async (oneP, onePh) => {
-        await fetch(`/api/travel-agent?agentlogin=${onePh}&agentpass=${oneP}`)
-            .then(async (res) => {
-                const result = await res.json();
+        await KamkorService.authTravelAgent(onePh, oneP)
+            .then(async (result) => {
                 console.log("result", result);
                 if (result && result?.info && result?.account) {
                     setTravelAgentData(result)

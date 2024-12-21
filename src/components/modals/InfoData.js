@@ -44,8 +44,11 @@ export default function InfoData() {
                 {data?.tourfirmname}
               </div>
               <div className="modal__preview">
-                <Image src={`https://www.fondkamkor.kz/Voucher/agents/${data?.rowid}/${data?.logo}`} width={100}
-                       height={100} alt={data?.tourfirmname}/>
+                <img src={`https://www.fondkamkor.kz/Voucher/agents/${data?.rowid}/${data?.logo}`} width={100}
+                     height={100} alt={data?.tourfirmname}/>
+
+                {/*<Image src={`https://www.fondkamkor.kz/Voucher/agents/${data?.rowid}/${data?.logo}`} width={100}*/}
+                {/*       height={100} alt={data?.tourfirmname}/>*/}
               </div>
             </div>
             <div className="modal__row">

@@ -6,6 +6,7 @@ import HeadPage from "@/components/ui/HeadPage";
 import translations from "@/translations";
 import {useLocale} from "@/context/locale";
 import {useParams, useRouter} from "next/navigation";
+import KamkorService from "@/services/kamkor.service";
 
 export default function CodePageClient(props) {
   const {locale} = useLocale();
@@ -19,9 +20,8 @@ export default function CodePageClient(props) {
 
   useEffect(() => {
       setLoading(true);
-      fetch(`/api/tourcode?code=${code}`)
-          .then(async (response) => {
-            const result = await response.json();
+      KamkorService.getTourCodeInfo(code)
+          .then(async (result) => {
             setTourCodeInfo(result);
             setLoading(false);
           })

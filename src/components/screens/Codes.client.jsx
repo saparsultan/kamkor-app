@@ -22,6 +22,7 @@ import {Button} from "@/components/ui/button";
 import PhoneInput from "@/components/our/PhoneInput";
 import {Bounce, toast} from "react-toastify";
 import Loading from "@/components/ui/Loading";
+import KamkorService from "@/services/kamkor.service";
 
 const CodesClient = () => {
     // const {data, setData} = useTravelAgencies()
@@ -45,13 +46,9 @@ const CodesClient = () => {
         const oneP = getItem('oneP');
         const onePh = getItem('onePh');
         if (oneP && onePh) {
-            fetch(`/api/codes?agentlogin=${onePh}&agentpass=${oneP}`, {
-                headers: {
-                    'Cache-Control': 'no-cache',
-                },
-            })
-                .then(async (res) => {
-                    const result = await res.json();
+            KamkorService.getCodes(onePh, oneP)
+                .then(async (result) => {
+                    console.log("result result result", result)
                     if (result && result?.data && result?.data.length > 0) {
                         console.log("result.data", result.data)
                         setData(result.data);
@@ -107,9 +104,8 @@ const CodesClient = () => {
         setIsSend(true);
         setIsLoadingSign(true);
         if (code && phoneNumber) {
-            await fetch(`/api/confirm-tourcode?agentlogin=${onePh}&agentpass=${oneP}&tour=${code}&phone=${phoneNumber}`)
-                .then(async (res) => {
-                    const result = await res.json();
+            KamkorService.confirmTourCode(onePh, oneP, code, phoneNumber)
+                .then(async (result) => {
                     console.log("result", result)
                     if (result && result?.data) {
                         setIsSend(false);

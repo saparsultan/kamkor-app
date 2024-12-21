@@ -4,13 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8178aca-43b0-42a2-8122-70705be7b3ae" name="Changes" comment="add: added passport for the list of tourist codes">
+    <list default="true" id="b8178aca-43b0-42a2-8122-70705be7b3ae" name="Changes" comment="fix: refactor loading">
+      <change afterPath="$PROJECT_DIR$/public/images/no-code.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logos/fondkamkor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logos/gerb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/kamkor.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/agencies/route.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/codes/route.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/confirm-tourcode/route.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/helper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/sign/route.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/tourcode/route.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/tours/route.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/travel-agent/route.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/codes/[code]/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/codes/[code]/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modals/EmptyData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modals/EmptyData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modals/InfoData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modals/InfoData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/screens/Agencies.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Agencies.client.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/screens/CodePage.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/CodePage.client.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/screens/Codes.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Codes.client.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Login.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Login.client.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/LoginAgent.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/LoginAgent.client.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Main.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Main.client.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/MainEdit.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/MainEdit.client.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Search.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Search.client.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/screens/Tours.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Tours.client.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/translations/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/translations/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/auth/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/auth/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sass/modals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/modals.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +44,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="JSX File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -55,7 +79,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/sultansyzdyk/WebstormProjects/kamkor-app/src/context&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/sultansyzdyk/WebstormProjects/kamkor-app/public&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -68,11 +92,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/context" />
       <recent name="$PROJECT_DIR$/src/app/api" />
       <recent name="$PROJECT_DIR$/src/components/screens" />
       <recent name="$PROJECT_DIR$/src/app/codes/[code]" />
-      <recent name="$PROJECT_DIR$/src/app/api/codes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/our" />
@@ -114,7 +138,13 @@
       <workItem from="1731347992935" duration="612000" />
       <workItem from="1731348609032" duration="1827000" />
       <workItem from="1731479534835" duration="2624000" />
-      <workItem from="1732653747254" duration="8188000" />
+      <workItem from="1732653747254" duration="8327000" />
+      <workItem from="1733243763835" duration="136000" />
+      <workItem from="1733917201677" duration="9029000" />
+      <workItem from="1734070994323" duration="520000" />
+      <workItem from="1734071549168" duration="8520000" />
+      <workItem from="1734677672286" duration="9754000" />
+      <workItem from="1734783518674" duration="1326000" />
     </task>
     <task id="LOCAL-00001" summary="add: added authorization as a travel agent">
       <option name="closed" value="true" />
@@ -212,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731481304248</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fix: refactor loading">
+      <option name="closed" value="true" />
+      <created>1732707778038</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1732707778038</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,6 +292,7 @@
     <MESSAGE value="fix: fix codes list" />
     <MESSAGE value="fix: fix codes list and confirm tourcode" />
     <MESSAGE value="add: added passport for the list of tourist codes" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: added passport for the list of tourist codes" />
+    <MESSAGE value="fix: refactor loading" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: refactor loading" />
   </component>
 </project>

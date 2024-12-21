@@ -7,6 +7,7 @@ import {useLocale} from "@/context/locale";
 import {getItem, setItem} from "@/services/storage.service";
 import {useRouter} from "next/navigation";
 import {Bounce, toast} from 'react-toastify';
+import KamkorService from "@/services/kamkor.service";
 
 export default function MainEditClient() {
   const router = useRouter()
@@ -59,9 +60,8 @@ export default function MainEditClient() {
     e.preventDefault()
     const oneI = getItem('oneI');
     if (phoneEdit && passportEdit) {
-      await fetch(`/api/sign?passport=${passportEdit}&pushId=${oneI}&phone=${phoneEdit}`)
-          .then(async (res) => {
-            const result = await res.json();
+      await KamkorService.authUser(passportEdit, oneI, phoneEdit)
+          .then(async (result) => {
             if (result && result?.return?.code) {
               await setItem('oneP', passportEdit)
               await setItem('onePh', phoneEdit)
