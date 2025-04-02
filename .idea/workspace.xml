@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b8178aca-43b0-42a2-8122-70705be7b3ae" name="Changes" comment="add: added passport for the list of tourist codes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/Agencies.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Agencies.client.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/CodePage.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/CodePage.client.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/Codes.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Codes.client.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/Tours.client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Tours.client.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/translations/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/translations/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/helper.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +112,7 @@
       <workItem from="1731348609032" duration="1827000" />
       <workItem from="1731479534835" duration="2624000" />
       <workItem from="1732653747254" duration="8188000" />
+      <workItem from="1743596077950" duration="359000" />
     </task>
     <task id="LOCAL-00001" summary="add: added authorization as a travel agent">
       <option name="closed" value="true" />

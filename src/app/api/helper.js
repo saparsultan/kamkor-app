@@ -1,3 +1,5 @@
+const push = 'fPAdezgdT5GP7sjcrDlnN-:APA91bGbzO6wRaFjVWnNgt-fWnU8wrefBxCzQmAKY0aLZ9MYmKYwQpHC1MKoxtti4lyPMaAwIogj4n4e5kbgiCHuROrwUe7dCTGyXnFU1-jgYNau-s3aW6g'
+
 export async function getTourCodeInfo(code) {
   const res = await fetch(
       `http://report.fondkamkor.kz/partner/packets/tour/${code}?is_ajax=1`,
@@ -40,7 +42,8 @@ export async function authTravelAgent(agentlogin, agentpass) {
         section: "partner",
         object: "home",
         agentlogin: agentlogin,
-        agentpass: agentpass
+        agentpass: agentpass,
+        pushid: push,
     }
     const res = await fetch(
         `http://report.fondkamkor.kz`,
