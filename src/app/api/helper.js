@@ -136,9 +136,21 @@ export async function getTours(passport, pushId, phone) {
   return await res.json();
 }
 
-export async function getAgencies() {
+export async function getAgencies(search) {
+    let url = `https://www.fondkamkor.kz/Voucher/partner/dictionaries/get/agents_registry?is_ajax=1&enabled=1&status=1&sortby=rowid`;
+    if (search) {
+        const trimmedSearch = search.trim();
+        const isNumber = /^\d+$/.test(trimmedSearch);
+
+        if (isNumber) {
+            url += `&bin=${trimmedSearch}`;
+        } else {
+            url += `&orgname=like ${trimmedSearch}`;
+        }
+    }
+
     const res = await fetch(
-        `https://www.fondkamkor.kz/Voucher/partner/dictionaries/get/agents_registry?is_ajax=1&enabled=1&status=1&sortby=rowid`,
+        url,
         {
             method: "GET",
             mode: "no-cors",
@@ -154,5 +166,6 @@ export async function getAgencies() {
             },
         },
     );
+    console.log("url res", res)
     return await res.json();
 }

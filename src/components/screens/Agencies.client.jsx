@@ -17,25 +17,65 @@ const AgenciesClient = () => {
   const [filterData, setFilterData] = useState([]);
   const [isLoading, setIsLoading] = useState(false)
 
-  const onFilterData = () => {
-    if (value && value !== '') {
-      setIsLoading(true);
-      setToggleFilter(true)
-      const updatedList = data.filter((item) =>
-          item?.tourfirmname.toLowerCase().includes(value.toLowerCase()),
-      );
-      setFilterData(updatedList)
-      setIsLoading(false);
-    }
-  }
-
   const onChangeValue = (e) => {
     const target = e.target.value
     setValue(target)
     if(target === '') {
       setIsLoading(false);
-      setToggleFilter(false)
+      // setToggleFilter(false)
     }
+  }
+
+  const onFilterData = () => {
+    if (value && value !== '') {
+      setIsLoading(true);
+      // setToggleFilter(true)
+      let url = `/api/agencies?search=${encodeURIComponent(value)}`;
+      fetch(
+          url, {
+            headers: {
+              'Cache-Control': 'no-cache',
+            },
+          }
+      ).then(async (res) => {
+        const data = await res.json();
+        setIsLoading(false);
+        setData(data?.['variants'])
+      }).catch(e => {
+        setIsLoading(true);
+        console.error(e)
+      })
+
+      // const updatedList = data.filter((item) =>
+      //     item?.tourfirmname.toLowerCase().includes(value.toLowerCase()),
+      // );
+      // setFilterData(updatedList)
+      // setIsLoading(false);
+    }
+  }
+
+  const onSearchTourAgent = (e) => {
+    const target = e.target.value;
+    setValue(target)
+    setIsLoading(true);
+    let url = `/api/agencies`;
+    if(target) {
+      url += `&search=${encodeURIComponent(target)}`;
+    }
+    fetch(
+        url, {
+          headers: {
+            'Cache-Control': 'no-cache',
+          },
+        }
+    ).then(async (res) => {
+      const data = await res.json();
+      setIsLoading(false);
+      setData(data?.['variants'])
+    }).catch(e => {
+      setIsLoading(true);
+      console.error(e)
+    })
   }
 
   const onShowInfo = (item) => {
