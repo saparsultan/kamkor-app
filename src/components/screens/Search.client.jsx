@@ -71,7 +71,7 @@ export default function SearchClient(props) {
                     {translations[locale].problemsTour}
                   </span>
                     <Link
-                        href={`https://api.whatsapp.com/send?phone=+77018880395&text=Здравствуйте!🆘%0AПрошу оказать содействие в возврате в Казахстан.%0A%0AМои данные:%0AНомер тура в реестре: ${
+                        href={`https://api.whatsapp.com/send?phone=&text=Здравствуйте!🆘%0AПрошу оказать содействие в возврате в Казахстан.%0A%0AМои данные:%0AНомер тура в реестре: ${
                             searchData
                         },%0AНачало тура: ${
                             tourCodeInfo?.data?.date_from
