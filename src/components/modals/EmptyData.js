@@ -39,7 +39,7 @@ export default function EmptyData() {
                 {translations[locale].contactConsultation}
               </div>
               <Image src={emptyImage} priority={true} alt={translations[locale].noTourAgent} className="modal__img"/>
-              <Link href='https://api.whatsapp.com/send/?phone=&text&type=phone_number&app_absent=0'
+              <Link href='https://api.whatsapp.com/send/?phone=77478699525&text&type=phone_number&app_absent=0'
                     target="_blank"
                     className="item-btn item-btn--primary"
               >

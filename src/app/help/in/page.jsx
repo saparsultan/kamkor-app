@@ -261,7 +261,7 @@ export default function HelpIn() {
           {/*  {translations[locale].needLegalAdvice}*/}
           {/*  &nbsp;Можете обратится к нашим юристам*/}
           {/*</div>*/}
-          <Link className="item-btn item-btn--primary" href="https://api.whatsapp.com/send?phone="
+          <Link className="item-btn item-btn--primary" href="https://api.whatsapp.com/send?phone=77478699525"
                 target='_blank' style={{justifyContent: 'center'}}><span>{translations[locale].contactKamkor}</span>
           </Link>
         </div>}
