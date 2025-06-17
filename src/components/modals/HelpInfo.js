@@ -2,8 +2,10 @@ import {useEffect, useRef} from 'react';
 import {Tooltip} from 'react-tooltip'
 import parse from 'html-react-parser';
 import {useHelpInfoModal} from "@/store";
+import {useLocale} from "@/context/locale";
 
 export default function HelpInfo() {
+  const {locale} = useLocale()
   const {data, toggleModal} = useHelpInfoModal()
   const modalRef = useRef();
 
@@ -32,11 +34,11 @@ export default function HelpInfo() {
             <div className="modal-content">
               <h3 className="modal__title">
                 {
-                  data.text
+                  locale === 'ru' ? data.text : data.textKk
                 }
               </h3>
               <div>
-                {parse(data?.content)}
+                {locale === 'ru' ? parse(data?.content) : parse(data?.contentKk)}
               </div>
             </div>
           </div>
